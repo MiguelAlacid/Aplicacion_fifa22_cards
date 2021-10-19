@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MasComponentes</string>
+    <string name="edad">Edad</string>
+    <string name="posicion">Posicion:</string>
+    <string name="media">Media</string>
+    <string name="precio">Precio</string>
+
+    <string-array name = "jugadores">
+        <item>Martial</item>
+        <item>Fekir</item>
+        <item>saint-maximin</item>
+    </string-array>
+</resources>
