@@ -2,7 +2,7 @@ package com.almi.mascomponentes;
 
 public class Jugador {
 
-    private byte bEdad;
+    private int iEdad;
     private String sPosicion;
     private String sMedia;
     private double dPrecio;
@@ -10,27 +10,27 @@ public class Jugador {
 
 
     public Jugador(int iImagen){
-        this.bEdad = 0;
+        this.iEdad = 0;
         this.sPosicion = "";
         this.sMedia = "";
         this.dPrecio = 0.0;
         this.iImagen = iImagen;
     }
 
-    public Jugador(byte bEdad, String sPosicion, String sMedia, double dprecio, int iImagen) {
-        this.bEdad = bEdad;
+    public Jugador(int iEdad, String sPosicion, String sMedia, double dprecio, int iImagen) {
+        this.iEdad = iEdad;
         this.sPosicion = sPosicion;
         this.sMedia = sMedia;
         this.dPrecio = dprecio;
         this.iImagen = iImagen;
     }
 
-    public byte getbEdad() {
-        return bEdad;
+    public int getiEdad() {
+        return iEdad;
     }
 
-    public void setbEdad(byte bEdad) {
-        this.bEdad = bEdad;
+    public void setiEdad(int iEdad) {
+        this.iEdad = iEdad;
     }
 
     public String getsPosicion() {
@@ -68,7 +68,7 @@ public class Jugador {
     @Override
     public String toString() {
         return "Jugador{" +
-                "bEdad=" + bEdad +
+                "iEdad=" + iEdad +
                 ", sPosicion='" + sPosicion + '\'' +
                 ", sMedia='" + sMedia + '\'' +
                 ", dPrecio=" + dPrecio +

@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">MasComponentes</string>
-    <string name="lblEdad">Edad</string>
-    <string name="lblPosicion">Posicion:</string>
-    <string name="lblMedia">Media</string>
-    <string name="lblPrecio">Precio</string>
+    <string name="lblEdad">Edad: %1d</string>
+    <string name="lblPosicion">Posicion: %1s</string>
+    <string name="lblMedia">Media: %1s</string>
+    <string name="lblPrecio">Precio: %1f</string>
 
     <string-array name = "jugadores">
         <item>Martial</item>

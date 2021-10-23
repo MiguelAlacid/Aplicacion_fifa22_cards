@@ -3,6 +3,7 @@ package com.almi.mascomponentes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -20,12 +21,12 @@ public class MainActivity extends AppCompatActivity {
     Spinner lstJugadores;
     ImageView imagenes;
     static Jugador oLimpiar = new Jugador(R.drawable.cartavacia);
-    static Jugador oMartial = new Jugador((byte)25,"DC","81",1000,R.drawable.martial );
-    static Jugador oFekir = new Jugador((byte)28,"MC0","86",96000,R.drawable.fekir);
-    static Jugador oSaintMaximin = new Jugador((byte)24,"MI","79",3900, R.drawable.saintmaximin);
-    static Jugador oGabrielJesus = new Jugador((byte)24,"DC","83",1100,R.drawable.gabrieljesus);
-    static Jugador oCourtois = new Jugador((byte)30,"GK","89",35000,R.drawable.courtois);
-    static Jugador oReguilon = new Jugador((byte)24,"LI","81",750,R.drawable.reguilon);
+    static Jugador oMartial = new Jugador(25,"DC","81",1000.0,R.drawable.martial );
+    static Jugador oFekir = new Jugador(28,"MC0","86",96000.0,R.drawable.fekir);
+    static Jugador oSaintMaximin = new Jugador(24,"MI","79",3900.0, R.drawable.saintmaximin);
+    static Jugador oGabrielJesus = new Jugador(24,"DC","83",1100.0,R.drawable.gabrieljesus);
+    static Jugador oCourtois = new Jugador(30,"GK","89",35000.0,R.drawable.courtois);
+    static Jugador oReguilon = new Jugador(24,"LI","81",750.0,R.drawable.reguilon);
     static ArrayList <Jugador> oJugadores = new ArrayList<Jugador>();
 
     @Override
@@ -41,27 +42,28 @@ public class MainActivity extends AppCompatActivity {
         imagenes = (ImageView) findViewById(R.id.imagenxDefecto);
 
         lstJugadores.setSelection(6);
+            lstJugadores.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
-        lstJugadores.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int iPosition, long l) {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int iPosition, long l) {
 
-                lblEdad.setText(getString(R.string.lblEdad) + ": " + oJugadores.get(iPosition).getbEdad());
-                lblMedia.setText(getString(R.string.lblMedia) + ": " + oJugadores.get(iPosition).getsMedia());
-                lblPosicion.setText(getString(R.string.lblPosicion) + ": "+  oJugadores.get(iPosition).getsPosicion());
-                lblPrecio.setText(getString(R.string.lblPrecio) + ": " + oJugadores.get(iPosition).getdPrecio());
-                imagenes.setImageResource(oJugadores.get(iPosition).getiImagen());
+                        lblEdad.setText(getString(R.string.lblEdad,oJugadores.get(iPosition).getiEdad()));
+                        lblMedia.setText(getString(R.string.lblMedia,oJugadores.get(iPosition).getsMedia()));
+                        lblPosicion.setText(getString(R.string.lblPosicion,oJugadores.get(iPosition).getsPosicion()));
+                        lblPrecio.setText(getString(R.string.lblPrecio,oJugadores.get(iPosition).getdPrecio()));
+                        imagenes.setImageResource(oJugadores.get(iPosition).getiImagen());
 
-            }
+                }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-                System.out.println("No has seleccionado ningun item");
-            }
-        });
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+                    System.out.println("No has seleccionado ningun item");
+                }
+            });
+
+
     }
     public static void cargarJugadores(){
-
             oJugadores.add(oMartial);
             oJugadores.add(oFekir);
             oJugadores.add(oSaintMaximin);
@@ -69,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
             oJugadores.add(oCourtois);
             oJugadores.add(oReguilon);
             oJugadores.add(oLimpiar);
+
     }
 
 
