@@ -5,28 +5,53 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    TextView lblEdad;
+    TextView lblPosicion;
+    TextView lblMedia;
+    TextView lblPrecio;
+    Spinner lstJugadores;
+    ImageView imagenes;
+    static Jugador oLimpiar = new Jugador(R.drawable.cartavacia);
+    static Jugador oMartial = new Jugador((byte)25,"DC","81",1000,R.drawable.martial );
+    static Jugador oFekir = new Jugador((byte)28,"MC0","86",96000,R.drawable.fekir);
+    static Jugador oSaintMaximin = new Jugador((byte)24,"MI","79",3900, R.drawable.saintmaximin);
+    static Jugador oGabrielJesus = new Jugador((byte)24,"DC","83",1100,R.drawable.gabrieljesus);
+    static Jugador oCourtois = new Jugador((byte)30,"GK","89",35000,R.drawable.courtois);
+    static Jugador oReguilon = new Jugador((byte)24,"LI","81",750,R.drawable.reguilon);
+    static ArrayList <Jugador> oJugadores = new ArrayList<Jugador>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        cargarJugadores();
+        lstJugadores = findViewById(R.id.listaJugadores);
+        lblEdad = findViewById(R.id.lblEdad);
+        lblPosicion = findViewById(R.id.lblPosicion);
+        lblMedia = findViewById(R.id.lblMedia);
+        lblPrecio = findViewById(R.id.lblPrecio);
+        imagenes = (ImageView) findViewById(R.id.imagenxDefecto);
 
-        Spinner lstColores = findViewById(R.id.listaColores);
+        lstJugadores.setSelection(6);
 
-
-        lstColores.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        lstJugadores.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int iPosition, long l) {
-                String item = parent.getItemAtPosition(iPosition).toString();
 
-                System.out.println("Position: " + iPosition);
-                System.out.println("Texto   :" +  item);
-                if (item.equals("Martial")){
+                lblEdad.setText(getString(R.string.lblEdad) + ": " + oJugadores.get(iPosition).getbEdad());
+                lblMedia.setText(getString(R.string.lblMedia) + ": " + oJugadores.get(iPosition).getsMedia());
+                lblPosicion.setText(getString(R.string.lblPosicion) + ": "+  oJugadores.get(iPosition).getsPosicion());
+                lblPrecio.setText(getString(R.string.lblPrecio) + ": " + oJugadores.get(iPosition).getdPrecio());
+                imagenes.setImageResource(oJugadores.get(iPosition).getiImagen());
 
-                }
             }
 
             @Override
@@ -35,4 +60,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    public static void cargarJugadores(){
+
+            oJugadores.add(oMartial);
+            oJugadores.add(oFekir);
+            oJugadores.add(oSaintMaximin);
+            oJugadores.add(oGabrielJesus);
+            oJugadores.add(oCourtois);
+            oJugadores.add(oReguilon);
+            oJugadores.add(oLimpiar);
+    }
+
+
 }

@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <Spinner
-        android:id="@+id/listaColores"
+        android:id="@+id/listaJugadores"
         android:layout_width="155dp"
         android:layout_height="42dp"
         android:layout_marginTop="40dp"
@@ -17,49 +17,56 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/Edad"
-        android:layout_width="77dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="84dp"
-        android:text="@string/edad"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listaColores" />
-
-    <TextView
-        android:id="@+id/posicion"
-        android:layout_width="79dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/posicion"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Edad" />
-
-    <TextView
-        android:id="@+id/Media"
-        android:layout_width="78dp"
+        android:id="@+id/lblEdad"
+        android:layout_width="126dp"
         android:layout_height="21dp"
         android:layout_marginStart="72dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/media"
+        android:layout_marginTop="84dp"
+        android:text="@string/lblEdad"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/posicion" />
+        app:layout_constraintTop_toBottomOf="@+id/listaJugadores" />
 
     <TextView
-        android:id="@+id/Precio"
-        android:layout_width="80dp"
-        android:layout_height="23dp"
+        android:id="@+id/lblPosicion"
+        android:layout_width="126dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="28dp"
+        android:gravity="fill"
+        android:text="@string/lblPosicion"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblEdad" />
+
+    <TextView
+        android:id="@+id/lblMedia"
+        android:layout_width="126dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/lblMedia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblPosicion" />
+
+    <TextView
+        android:id="@+id/lblPrecio"
+        android:layout_width="125dp"
+        android:layout_height="22dp"
         android:layout_marginStart="72dp"
         android:layout_marginTop="40dp"
-        android:text="@string/precio"
+        android:text="@string/lblPrecio"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Media" />
+        app:layout_constraintTop_toBottomOf="@+id/lblMedia" />
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/imagenxDefecto"
+        android:hint="hola"
+        android:layout_width="176dp"
+        android:layout_height="336dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

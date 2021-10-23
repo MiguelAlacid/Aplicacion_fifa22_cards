@@ -1,13 +1,17 @@
 <resources>
     <string name="app_name">MasComponentes</string>
-    <string name="edad">Edad</string>
-    <string name="posicion">Posicion:</string>
-    <string name="media">Media</string>
-    <string name="precio">Precio</string>
+    <string name="lblEdad">Edad</string>
+    <string name="lblPosicion">Posicion:</string>
+    <string name="lblMedia">Media</string>
+    <string name="lblPrecio">Precio</string>
 
     <string-array name = "jugadores">
         <item>Martial</item>
         <item>Fekir</item>
         <item>saint-maximin</item>
+        <item>Gabriel Jesus</item>
+        <item>Courtois</item>
+        <item>Reguilon</item>
+        <item>Limpiar</item>
     </string-array>
 </resources>
