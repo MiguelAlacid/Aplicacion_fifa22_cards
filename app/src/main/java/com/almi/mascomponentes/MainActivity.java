@@ -43,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
 
         lstJugadores.setSelection(6);
             lstJugadores.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int iPosition, long l) {
+
 
                         lblEdad.setText(getString(R.string.lblEdad,oJugadores.get(iPosition).getiEdad()));
                         lblMedia.setText(getString(R.string.lblMedia,oJugadores.get(iPosition).getsMedia()));
@@ -57,8 +57,9 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onNothingSelected(AdapterView<?> parent) {
-                    System.out.println("No has seleccionado ningun item");
+
                 }
+
             });
 
 
